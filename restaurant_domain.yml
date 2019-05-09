@@ -1,0 +1,109 @@
+slots:
+  location:
+    type: text
+  cuisine:
+    type: text
+  price_range:
+    type: text
+  customer_email:
+    type: text
+
+
+entities:
+ - location
+ - cuisine
+ - price_range
+ - customer_email
+
+
+intents:
+ - greet
+ - affirm
+ - deny
+ - goodbye
+ - thankyou
+ - restaurant_search
+ - email_send
+ 
+ 
+templates:
+  utter_greet:
+    - "hey there! I'm Foodie, How may i help you"
+    - "Hi I'm Foodie, How can I help you!"
+    - "Hey, How is it going. I'm Foodie.. How May I help you Today"
+  utter_goodbye:
+    - "goodbye :("
+    - "Bye-bye"
+  utter_again:
+    - "Try again?"
+    - "Search again?"
+  utter_location_again:
+    - "Want to enter different location?"
+    - "Try again with different location?"
+  utter_cuisine_again:
+    - "Want to try a different cuisine?"
+    - "Try different cuisine?"
+  utter_ask_cuisine: 
+    - text: "what kind of cuisine would you like?"
+      buttons:
+      - title: "Chinese"
+        payload: "Chinese"
+      - title: "Italian"
+        payload: "Italian"
+      - title: "South Indian"
+        payload: "South Indian"
+      - title: "North Indian"
+        payload: "North Indian"
+      - title: "Mexican"
+        payload: "Mexican"
+      - title: "American"
+        payload: "American"
+  utter_ask_price_range: 
+    - text: "what is your budget?"
+      buttons:
+      - title: "Less than 300"
+        payload: "Low"
+      - title: "Between 300 to 700"
+        payload: "Medium"
+      - title: "Greater than 700"
+        payload: "High"
+  utter_ask_howcanhelp:
+    - "how can I help you?"
+  utter_ask_location:
+    - "In what location?"
+    - "Location please!!"
+  utter_ask_emailrestaurants:
+    - text: "Want details of top 10 restaurant on email?"
+      buttons:
+      - title: "yes send"
+        payload: "yes"
+      - title: "no thanks"
+        payload: "no" 
+  utter_ask_emailaddress:
+    - "Please enter your email ID" 
+  utter_ask_differentlocation:
+    - "Do you want to choose a different location?"
+    - "Try different location?"
+  utter_ask_searchmore:
+    - "Want to continue searching more restaurants?"
+    - "Look for more delicious food?"    
+actions:
+ - utter_greet
+ - utter_goodbye
+ - utter_again
+ - utter_location_again
+ - utter_cuisine_again
+ - utter_ask_howcanhelp
+ - utter_ask_location
+ - utter_ask_cuisine
+ - utter_ask_price_range
+ - utter_ask_emailrestaurants
+ - utter_ask_emailaddress
+ - utter_ask_differentlocation
+ - utter_ask_searchmore
+ - actions.ActionSendEmail
+ - actions.ActionSearchRestaurants
+ - actions.ActionLocationValidator
+ - actions.ActionCuisineCheck
+ - actions.ActionEmailCheck
+ - actions.Actionreset
