@@ -1,0 +1,10 @@
+numpy
+pandas
+matplotlib
+datetime
+plotly
+dash
+dash_table
+sklearn
+tensorflow
+keras
